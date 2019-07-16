@@ -3,12 +3,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t akshaydhawle/docker-react -f Dockerfile .
+  - docker build -t akshaydhawle/docker-react -f Dockerfile.dev .
 
 script:
   - docker run  akshaydhawle/docker-react npm run test -- --coverage
 
-##
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
