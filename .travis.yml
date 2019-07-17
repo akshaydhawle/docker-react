@@ -8,7 +8,9 @@ before_install:
 script:
   - docker run  akshaydhawle/docker-react npm run test -- --coverage
 
+
 deploy:
+  - echo "start deploying"
   provider: elasticbeanstalk
   region: "ap-south-1"
   app: "docker"
@@ -20,3 +22,6 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"    
+
+after_deploy:
+  - echo "done deploying"
