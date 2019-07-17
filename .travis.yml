@@ -10,7 +10,7 @@ script:
 
 
 deploy:
-  - echo "start deploying"
+  - echo "start deploying ..."
   provider: elasticbeanstalk
   region: "ap-south-1"
   app: "docker"
@@ -24,4 +24,4 @@ deploy:
     secure: "$AWS_SECRET_KEY"    
 
 after_deploy:
-  - echo "done deploying ."
+  - echo "done deploying "
